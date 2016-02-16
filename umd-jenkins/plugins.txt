@@ -1,0 +1,12 @@
+docker-plugin 0.16.0
+durable-task 1.6
+git 2.4.0
+git-client 1.19.0
+github 1.16.0
+github-api 1.69
+kubernetes 0.5
+plain-credentials 1.1 
+scm-api 1.0
+token-macro 1.11
+nodelabelparameter 1.7.1
+ansicolor 0.4.2
