@@ -15,6 +15,8 @@ RUN useradd -ms /bin/bash jenkins
 RUN echo "jenkins:jenkins" | chpasswd
 RUN sed -i '/root\tALL=/a jenkins ALL=(ALL) NOPASSWD: ALL' /etc/sudoers
 
+RUN sed -i 's/$releasever/6x/g' /etc/yum.repos.d/sl.repo
+
 ADD https://raw.githubusercontent.com/egi-qc/umd-verification/master/bin/utils/prepare_sl6.sh /tmp/
 RUN bash /tmp/prepare_sl6.sh
 
