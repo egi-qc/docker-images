@@ -20,5 +20,13 @@ RUN sed -i 's/$releasever/6x/g' /etc/yum.repos.d/sl.repo
 ADD https://raw.githubusercontent.com/egi-qc/umd-verification/master/bin/utils/prepare_sl6.sh /tmp/
 RUN bash /tmp/prepare_sl6.sh
 
+RUN yum -y install which
+RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+RUN curl -sSL https://get.rvm.io | bash -s stable --ruby
+RUN source /etc/profile.d/rvm.sh
+
+RUN pip install jinja2
+RUN gem install puppet -v 3.8.7
+
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
