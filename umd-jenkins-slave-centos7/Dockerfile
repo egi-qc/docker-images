@@ -19,7 +19,7 @@ ADD https://raw.githubusercontent.com/egi-qc/umd-verification/master/bin/utils/p
 RUN bash /tmp/prepare_centos7.sh
 
 RUN yum -y install python-jinja2
-RUN yum -y install openssl-devel
+RUN yum -y install openssl openssl-devel
 
 ADD https://raw.githubusercontent.com/egi-qc/umd-verification/master/requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
