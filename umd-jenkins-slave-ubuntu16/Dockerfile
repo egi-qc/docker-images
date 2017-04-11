@@ -17,7 +17,7 @@ RUN useradd -m -d /home/jenkins -s /bin/sh jenkins && \
     echo "jenkins:jenkins" | chpasswd
 
 RUN apt-get -q update && \
-    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends gcc git python-dev python-setuptools python-pip && \
+    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends gcc git python-dev python-setuptools python-pip libssl-dev && \
     apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin
 
 RUN git clone https://github.com/egi-qc/umd-verification /tmp/umd-verification && \
