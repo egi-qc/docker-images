@@ -24,5 +24,7 @@ RUN yum -y install openssl openssl-devel
 ADD https://raw.githubusercontent.com/egi-qc/umd-verification/master/requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 
+RUN yum -y remove epel-release
+
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
