@@ -24,8 +24,7 @@ RUN git clone https://github.com/egi-qc/umd-verification /tmp/umd-verification &
     pip install -r /tmp/umd-verification/requirements.txt 
 
 RUN apt-get -q update && \
-    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends python-ldap && \
-    apt-get -q clean -y && rm -rf /var/lib/apt/lists/* && rm -f /var/cache/apt/*.bin
+    DEBIAN_FRONTEND="noninteractive" apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends python-ldap wget
 
 RUN echo "jenkins ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
